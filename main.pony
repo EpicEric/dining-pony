@@ -4,7 +4,7 @@ use "time"
 actor Main
   new create(env: Env) =>
     let total: U64 = try
-      let total' = env.args(1).u64()
+      let total' = env.args(1)?.u64()?
       if total' <= 1 then error else total' end
     else
       5
